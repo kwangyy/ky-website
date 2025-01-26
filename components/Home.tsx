@@ -106,7 +106,7 @@ export default function Home() {
           <div className="space-y-4 text-gray-300">
             <p>
               I'm an AI Engineer, passionate about building systems that solve real-world problems with the help of AI. 
-              My speciality is Retrieval-Augmented Generation (RAG), and I am also trained in Data Science.  
+              My speciality is Retrieval-Augmented Generation (RAG), and I am also trained as a Data Scientist. I create efficient and scalable AI solutions.
             </p>
             <p>
               Currently, I'm working on my Final Year Project, which utilises RAG to detect toxicity in games. I'm super interested in the Edtech and Gaming industries!
