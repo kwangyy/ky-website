@@ -110,7 +110,7 @@ export default function Home() {
             </p>
             <p>
               Currently, I'm working on my Final Year Project, which utilises RAG to detect toxicity in games. I'm super interested in the Edtech and Gaming industries!
-              In my free time, Imake coffee, and I travel a lot. I also like to conduct workshops and give talks here and there. 
+              In my free time, I make coffee, and I travel a lot. I also like to conduct workshops and give talks here and there. 
             </p>
             <p>
               Interested in some of my thoughts? Check it out here :) (Work in progress)
