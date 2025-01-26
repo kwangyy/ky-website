@@ -7,6 +7,26 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Kwang Yang - AI Engineer',
   description: 'Personal website of Kwang Yang, AI Engineer specializing in RAG and Data Science',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+        sizes: 'any',
+      },
+      {
+        url: '/favicon-32x32.png',
+        type: 'image/png',
+        sizes: '32x32',
+      },
+    ],
+    apple: [
+      {
+        url: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({

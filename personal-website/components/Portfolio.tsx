@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { Github } from 'lucide-react'
 import {
   Card,
   CardContent,
@@ -22,32 +23,39 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
-    title: "RAG-powered Chatbot",
-    description: "Developed a chatbot using Retrieval-Augmented Generation for enhanced context-aware responses.",
-    details: "This project involved implementing a state-of-the-art language model with a retrieval mechanism to provide more accurate and contextually relevant responses. The chatbot was trained on a large corpus of domain-specific data, allowing it to handle complex queries with high precision."
+    title: "Node.py - Enterprise Knowledge Graphs",
+    description: "Developed a visualization tool for enterprise knowledge graphs, as well as a search engine that uses LLMs to answer questions with natural language input.",
+    details: "I led development of an AI-powered Knowledge Graph interface for enterprise content, focusing on React frontend and building asynchronous APIs with HuggingFace, Flask, and Neo4j. This was then dockerized for deployment.",
+    github: "https://github.com/kwangyy/node_py",
+    technologies: ["Python", "HuggingFace", "Docker", "D3.js", "React", "Neo4j"]
   },
   {
-    title: "Data Science Dashboard",
-    description: "Created an interactive dashboard for visualizing complex datasets and deriving actionable insights.",
-    details: "The dashboard was built using React and D3.js, providing real-time data visualization capabilities. It includes features such as dynamic filtering, custom chart creation, and automated report generation, making it an invaluable tool for data-driven decision making."
+    title: "Accessible Personal Finance for Aging Population - HackSingapore 2024",
+    description: "Built a chatbot that helps elderly people to manage their finances, with accessibility features such as voice input and output, and text-to-speech.",
+      details: "I spearheaded the web scraping of financial advice from reputable sources such as DollarsAndSense, as well as DBS. I was part of the whole building process for the chatbot, specifically for the AI portion of the project.",
+      github: "https://github.com/zsh-eng/hacksingapore",
+    technologies: ["OpenAI API", "Langchain", "Selenium", "Python"]
   },
   {
-    title: "AI-driven Recommendation System",
-    description: "Implemented a sophisticated recommendation system using machine learning algorithms for personalized user experiences.",
-    details: "This system utilizes collaborative filtering and content-based approaches to generate highly accurate recommendations. It was implemented using Python and TensorFlow, and deployed on a cloud infrastructure to handle large-scale data processing and real-time recommendations."
+    title: "Credit Card Approval Classification - Top 5 Project in IT1244 Cohort",
+    description: "Implemented a clustering system and classification model to predict credit card approval",
+    details: "This system first utilizes a clustering system to group customers into different segments, before using a XGBoost model to predict whether a customer will be approved for a credit card. This project was a top 5 project in my IT1244 cohort.",
+    github: "https://github.com/kwangyy/credit-card-approval",
+    technologies: ["Python", "XGBoost", "scikit-learn", "pandas"]
   }
 ]
 
 const workHighlights = [
-  "Led the development of Atlas, a groundbreaking AI-powered data analysis platform",
-  "Co-founded SimpleAI, democratizing access to AI tools for small businesses",
-  "Spearheaded the implementation of machine learning models that increased operational efficiency by 40% at TechCorp"
+  "SimpleAI - Redesigned Pinecone embedding system for faster and more accurate retrieval, and refactored it with existing tech stack of MongoDB and React",
+  "Atlas - Designed RAG workflow with advanced methods such as Query Expansion and Rewriting, and cut client-side inference time by 69.84%",
+  "NUS - Co-authoring a paper with Prof Linda Sellou for measuring interests in electrochemistry learning"
 ]
 
 const leadershipPositions = [
-  "Team Lead, AI Research Division at TechCorp",
-  "Mentor, Women in AI Program",
-  "Conference Chair, International AI Symposium 2023"
+  "Media Director (AY24/25), NUS Raffles Hall",
+  "Workshops Director (AY23/24), NUS Statistics and Data Science Society",
+  "Student Lead (AY23/24), NUS Raffles Hall Developers",
+  "Teaching Assistant (AY23/24 - AY24/25), IT1244 & other courses"
 ]
 
 export default function Portfolio() {
@@ -64,9 +72,9 @@ export default function Portfolio() {
     >
       <div className="container mx-auto px-4">
         <motion.h2
-          className="text-3xl font-bold mb-8"
-          initial={{ x: -20 }}
-          whileInView={{ x: 0 }}
+          className="text-3xl font-bold mb-8 text-center"
+          initial={{ y: -20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
@@ -81,22 +89,57 @@ export default function Portfolio() {
           >
             <Card className="h-full flex flex-col">
               <CardHeader>
-                <CardTitle>Projects</CardTitle>
+                <CardTitle className="text-xl font-semibold">Projects</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
-                <ul className="space-y-2">
+                <ul className="space-y-4">
                   {projects.map((project, index) => (
                     <li key={index}>
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button variant="link" onClick={() => setSelectedProject(project)}>
+                          <Button 
+                            variant="ghost" 
+                            className="text-blue-400 hover:text-blue-300 p-0 h-auto text-base font-normal focus-visible:ring-0 focus-visible:ring-offset-0 whitespace-normal text-left w-full justify-start"
+                          >
                             {project.title}
                           </Button>
                         </DialogTrigger>
-                        <DialogContent>
+                        <DialogContent className="sm:max-w-[425px]">
                           <DialogHeader>
-                            <DialogTitle>{project.title}</DialogTitle>
-                            <DialogDescription>{project.details}</DialogDescription>
+                            <DialogTitle className="flex justify-between items-center text-xl">
+                              {project.title}
+                              {project.github && (
+                                <a 
+                                  href={project.github} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center"
+                                >
+                                  <Button 
+                                    variant="outline" 
+                                    size="icon"
+                                    className="focus-visible:ring-0 focus-visible:ring-offset-0"
+                                  >
+                                    <Github className="h-4 w-4" />
+                                  </Button>
+                                </a>
+                              )}
+                            </DialogTitle>
+                            <DialogDescription className="space-y-4 text-base">
+                              <p>{project.details}</p>
+                              {project.technologies && project.technologies.length > 0 && (
+                                <div className="flex flex-wrap gap-2 mt-4">
+                                  {project.technologies.map((tech, index) => (
+                                    <span 
+                                      key={index}
+                                      className="px-2 py-1 bg-blue-500/10 text-blue-400 rounded-md text-sm"
+                                    >
+                                      {tech}
+                                    </span>
+                                  ))}
+                                </div>
+                              )}
+                            </DialogDescription>
                           </DialogHeader>
                         </DialogContent>
                       </Dialog>
@@ -133,7 +176,7 @@ export default function Portfolio() {
           >
             <Card className="h-full flex flex-col">
               <CardHeader>
-                <CardTitle>Leadership</CardTitle>
+                <CardTitle>Leadership & Teaching</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
                 <ul className="list-disc list-inside space-y-2">
@@ -153,7 +196,9 @@ export default function Portfolio() {
           viewport={{ once: true }}
         >
           <a href="/kwang_yang_resume.pdf" target="_blank" rel="noopener noreferrer" download>
-            <Button>Download Resume (PDF)</Button>
+            <Button className="bg-blue-500 hover:bg-blue-600 text-white">
+              Download Resume (PDF)
+            </Button>
           </a>
         </motion.div>
       </div>
