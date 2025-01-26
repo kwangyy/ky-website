@@ -100,21 +100,20 @@ export default function Home() {
         <div className="w-full md:w-2/3 text-left space-y-6">
           <div>
             <h1 className="text-4xl font-bold mb-4">Hi, I'm Kwang Yang</h1>
-            <p className="text-xl text-gray-300">AI Engineer specializing in RAG and Data Science</p>
+            <p className="text-xl text-gray-300">AI Engineer specializing in RAG</p>
           </div>
           
           <div className="space-y-4 text-gray-300">
             <p>
-              I'm passionate about building intelligent systems that solve real-world problems.
-              With expertise in RAG systems and machine learning, I specialize in creating
-              efficient and scalable AI solutions.
+              I'm an AI Engineer, passionate about building systems that solve real-world problems with the help of AI. 
+              My speciality is Retrieval-Augmented Generation (RAG), and I am also trained in Data Science.  
             </p>
             <p>
-              Currently focused on developing advanced retrieval systems and improving AI model
-              performance while staying up-to-date with the latest developments in AI technology.
+              Currently, I'm working on my Final Year Project, which utilises RAG to detect toxicity in games. I'm super interested in the Edtech and Gaming industries!
+              In my free time, Imake coffee, and I travel a lot. I also like to conduct workshops and give talks here and there. 
             </p>
             <p>
-              Interested in some of my thoughts? Check it out here :) 
+              Interested in some of my thoughts? Check it out here :) (Work in progress)
             </p>
           </div>
         </div>
