@@ -6,6 +6,7 @@ import Particles from "react-tsparticles"
 import { loadSlim } from "tsparticles-slim"
 import { useCallback } from "react"
 import { Engine } from "tsparticles-engine"
+import Link from 'next/link'
 
 export default function Home() {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -113,7 +114,7 @@ export default function Home() {
               In my free time, I make coffee, and I travel a lot. I also like to conduct workshops and give talks here and there. 
             </p>
             <p>
-              Interested in some of my thoughts? Check it out here :) (Work in progress)
+              Interested in some of my thoughts? Check it out <Link href="https://medium.com/@kwangyyinc">here</Link> :)
             </p>
           </div>
         </div>
