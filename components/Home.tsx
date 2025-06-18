@@ -110,11 +110,12 @@ export default function Home() {
               My speciality is Retrieval-Augmented Generation (RAG), and I am also trained as a Data Scientist. I create efficient and scalable AI solutions.
             </p>
             <p>
-              Currently, I'm working on my Final Year Project, which utilises RAG to detect toxicity in games. I'm super interested in the Edtech and Gaming industries!
-              In my free time, I make coffee, and I travel a lot. I also like to conduct workshops and give talks here and there. 
+              Currently, I'm looking for opportunities to work on AI related projects. This can be anything from RAG to Agentic AI.
+              I've finished working on my <a href="/kwang_yang_fyp.pdf" target="_blank" rel="noopener noreferrer" download className="underline">Final Year Project</a>, which utilises RAG to detect toxicity in games. I'm super interested in the Edtech and Gaming industries!
             </p>
             <p>
-              Interested in some of my thoughts? Check it out <Link href="https://medium.com/@kwangyyinc">here</Link> :)
+              In my free time, I make coffee, and I travel a lot. I also like to conduct workshops and give talks here and there. 
+              Interested in some of my thoughts? Check it out <Link href="https://medium.com/@kwangyyinc" className="underline">here</Link> :)
             </p>
           </div>
         </div>

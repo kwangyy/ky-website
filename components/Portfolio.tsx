@@ -23,6 +23,20 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
+    "title": "Combatting Game Toxicity with Large Language Models",
+    "description": "Built a real-time game toxicity detection system using Retrieval-Augmented Generation (RAG) and decoder-based LLMs, tailored to handle slang, typos, and regional variation in gamer chat.",
+    "details": "I engineered a RAG-Keyword system using Llama 3.1 and Pinecone to boost recall and interpretability in toxic chat detection across games. Integrated keyword-aware scoring and explainable AI outputs.",
+    "github": "https://github.com/kwangyy/game-toxicity",
+    "technologies": ["Python", "Pinecone", "Large Language Models", "Llama", "RAG", "Explainable AI"]
+  },
+  {
+    "title": "AI-Powered Business Insight Generator – Guru Network AI Innovation Challenge 2025",
+    "description": "Built an LLM dashboard that delivers real-time financial insights from structured business data across multiple industries.",
+    "details": "I developed a Next.js dashboard with OpenAI and Pinecone for semantic search across SQL and MongoDB data. Enabled real-time trend and benchmarking insights.",
+    "github": "https://github.com/kwangyy/6singles-backend",
+    "technologies": ["Next.js", "OpenAI API", "Pinecone", "MongoDB", "SQL", "LLM", "Vector Search"]
+  },
+  {
     title: "Node.py - Enterprise Knowledge Graphs",
     description: "Developed a visualization tool for enterprise knowledge graphs, as well as a search engine that uses LLMs to answer questions with natural language input.",
     details: "I led development of an AI-powered Knowledge Graph interface for enterprise content, focusing on React frontend and building asynchronous APIs with HuggingFace, Flask, and Neo4j. This was then dockerized for deployment.",
@@ -32,8 +46,8 @@ const projects = [
   {
     title: "Accessible Personal Finance for Aging Population - HackSingapore 2024",
     description: "Built a chatbot that helps elderly people to manage their finances, with accessibility features such as voice input and output, and text-to-speech.",
-      details: "I spearheaded the web scraping of financial advice from reputable sources such as DollarsAndSense, as well as DBS. I was part of the whole building process for the chatbot, specifically for the AI portion of the project.",
-      github: "https://github.com/zsh-eng/hacksingapore",
+    details: "I spearheaded the web scraping of financial advice from reputable sources such as DollarsAndSense, as well as DBS. I was part of the whole building process for the chatbot, specifically for the AI portion of the project.",
+    github: "https://github.com/zsh-eng/hacksingapore",
     technologies: ["OpenAI API", "Langchain", "Selenium", "Python"]
   },
   {
