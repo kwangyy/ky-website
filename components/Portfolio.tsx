@@ -61,7 +61,12 @@ const projects = [
 
 const workHighlights = [
   "SimpleAI - Redesigned Pinecone embedding system for faster and more accurate retrieval, and refactored it with existing tech stack of MongoDB and React",
-  "Atlas - Designed RAG workflow with advanced methods such as Query Expansion and Rewriting, and cut client-side inference time by 69.84%",
+  {
+    text: "Atlas - ",
+    link: "https://medium.com/@kwangyyinc/optimising-rag-for-web-content-at-atlas-3e9e300e971f",
+    linkText: "Designed RAG workflow",
+    afterText: " with advanced methods such as Query Expansion and Rewriting, and cut client-side inference time by 69.84%"
+  },
   "NUS - Co-authoring a paper with Prof Linda Sellou for measuring interests in electrochemistry learning"
 ]
 
@@ -69,7 +74,12 @@ const leadershipPositions = [
   "Media Director (AY24/25), NUS Raffles Hall",
   "Workshops Director (AY23/24), NUS Statistics and Data Science Society",
   "Student Lead (AY23/24), NUS Raffles Hall Developers",
-  "Teaching Assistant (AY23/24 - AY24/25), IT1244 & other courses"
+  {
+    text: "Teaching Assistant (AY23/24 - AY24/25), IT1244 & other courses + ",
+    link: "https://credentials.nus.edu.sg/67613a15-2045-498e-af25-0864816b4b7d#acc.5RbHLdYs",
+    linkText: "won awards :)",
+    afterText: ""
+  }
 ]
 
 export default function Portfolio() {
@@ -176,7 +186,19 @@ export default function Portfolio() {
               <CardContent className="flex-grow">
                 <ul className="list-disc list-inside space-y-2">
                   {workHighlights.map((highlight, index) => (
-                    <li key={index}>{highlight}</li>
+                    <li key={index}>
+                      {typeof highlight === 'string' ? (
+                        highlight
+                      ) : (
+                        <>
+                          {highlight.text}
+                          <a href={highlight.link} target="_blank" rel="noopener noreferrer" className="underline">
+                            {highlight.linkText}
+                          </a>
+                          {highlight.afterText}
+                        </>
+                      )}
+                    </li>
                   ))}
                 </ul>
               </CardContent>
@@ -195,7 +217,19 @@ export default function Portfolio() {
               <CardContent className="flex-grow">
                 <ul className="list-disc list-inside space-y-2">
                   {leadershipPositions.map((position, index) => (
-                    <li key={index}>{position}</li>
+                    <li key={index}>
+                      {typeof position === 'string' ? (
+                        position
+                      ) : (
+                        <>
+                          {position.text}
+                          <a href={position.link} target="_blank" rel="noopener noreferrer" className="underline">
+                            {position.linkText}
+                          </a>
+                          {position.afterText}
+                        </>
+                      )}
+                    </li>
                   ))}
                 </ul>
               </CardContent>
