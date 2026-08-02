@@ -1,50 +1,32 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
+
+const nav = [
+  { href: '#work', label: 'Work' },
+  { href: '#writing', label: 'Writing & talks' },
+  { href: '#contact', label: 'Contact' },
+]
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="relative w-8 h-8">
-          <Image
-            src="/logo.jpg"
-            alt="Logo"
-            fill
-            className="object-contain"
-            priority
-          />
+    <header className="sticky top-0 z-20 border-b border-line-2 bg-bg/80 backdrop-blur-xl backdrop-saturate-150">
+      <nav className="mx-auto flex h-[60px] max-w-shell items-center justify-between gap-6 px-6 md:px-8">
+        <Link href="#top" className="text-[14px] font-medium tracking-[-0.01em] text-ink no-underline">
+          Kwang Yang
         </Link>
-        <div className="flex items-center space-x-4">
-          <Link href="https://linkedin.com/in/kwang-yang-chia" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" size="icon">
-              <Linkedin className="h-5 w-5" />
-            </Button>
-          </Link>
-          <Link href="https://github.com/kwangyy" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" size="icon">
-              <Github className="h-5 w-5" />
-            </Button>
-          </Link>
-          <Link href="https://twitter.com/kwangyyinc" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" size="icon">
-              <Twitter className="h-5 w-5" />
-            </Button>
-          </Link>
-          <Link href="mailto:chia.kwang.yang@gmail.com">
-            <Button 
-              variant="outline"
-              data-contact-button
-              className="transition-all duration-300"
+        <div className="flex items-center gap-7">
+          {nav.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className="text-[13.5px] text-ink-2 no-underline transition-colors hover:text-ink"
             >
-              <Mail className="h-5 w-5 mr-2" />
-              Contact Me
-            </Button>
-          </Link>
+              {label}
+            </Link>
+          ))}
+          <ThemeToggle />
         </div>
-      </div>
+      </nav>
     </header>
   )
 }
-
