@@ -1,61 +1,40 @@
-'use client'
+import Reveal from './Reveal'
 
-import { motion } from 'framer-motion'
+const socials = [
+  { href: 'https://linkedin.com/in/kwang-yang-chia', label: 'LinkedIn' },
+  { href: 'https://github.com/kwangyy', label: 'GitHub' },
+  { href: 'https://twitter.com/kwangyyinc', label: 'Twitter' },
+  { href: 'https://medium.com/@kwangyyinc', label: 'Medium' },
+]
 
 export default function Contact() {
-  const highlightContactButton = () => {
-    const contactButton = document.querySelector('[data-contact-button]')
-    const overlay = document.createElement('div')
-    
-    if (contactButton) {
-      // Create and add overlay
-      overlay.className = 'fixed inset-0 bg-black/60 transition-opacity duration-300 z-40'
-      document.body.appendChild(overlay)
-      
-      // Add highlight to button and bring it forward
-      contactButton.classList.add('ring', 'ring-blue-400', 'relative', 'z-50')
-      
-      // Scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      
-      // Remove overlay and highlight after animation
-      setTimeout(() => {
-        overlay.classList.add('opacity-0')
-        contactButton.classList.remove('ring', 'ring-blue-400', 'relative', 'z-50')
-        setTimeout(() => {
-          overlay.remove()
-        }, 300) // Wait for fade out animation
-      }, 2000)
-    }
-  }
-
   return (
-    <motion.section
-      id="contact"
-      className="py-20 bg-gray-800"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
-      <div className="container mx-auto px-4 text-center">
-        <motion.p
-          className="mb-4 text-xl"
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+    <section id="contact" className="border-t border-line pb-10 pt-24">
+      <Reveal>
+        <p className="mb-8 font-mono text-label uppercase text-ink-3">Contact</p>
+        <a
+          href="mailto:chia.kwang.yang@gmail.com"
+          className="inline-block text-[clamp(30px,5.2vw,64px)] font-medium leading-[1.05] tracking-[-0.035em] text-ink no-underline transition-colors hover:text-accent"
         >
-          Interested in collaborating or have a question?{" "}
-          <button 
-            className="text-blue-400 hover:underline"
-            onClick={highlightContactButton}
-          >
-            Click here
-          </button>
-        </motion.p>
-      </div>
-    </motion.section>
+          chia.kwang.yang@gmail.com
+        </a>
+        <div className="mt-14 flex flex-wrap items-baseline gap-7 border-t border-line pt-6">
+          {socials.map(({ href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-meta text-ink-2 no-underline transition-colors hover:text-ink"
+            >
+              {label}
+            </a>
+          ))}
+          <span className="ml-auto font-mono text-[11px] text-ink-3">
+            &copy; {new Date().getFullYear()} Kwang Yang
+          </span>
+        </div>
+      </Reveal>
+    </section>
   )
 }
-
