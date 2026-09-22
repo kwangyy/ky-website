@@ -56,7 +56,7 @@ export default function Writing() {
                 <span className="font-mono text-[11px] uppercase tracking-[0.09em] text-ink-3">
                   {entry.kind}
                 </span>
-                <span className="mt-auto text-[20px] leading-[1.28] tracking-[-0.017em]">
+                <span className="mt-3 text-[20px] leading-[1.28] tracking-[-0.017em]">
                   {entry.title}
                 </span>
                 <span className="text-meta text-ink-2">{entry.detail}</span>
