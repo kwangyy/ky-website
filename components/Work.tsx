@@ -88,7 +88,9 @@ export default function Work() {
 
       <Reveal delay={0.28}>
         <p className="mt-7 text-meta">
-          <a href="#">All work, including openJiuwen, Terminal Bench and knowledge graphs &rarr;</a>
+          <a href="https://linkedin.com/in/kwang-yang-chia" target="_blank" rel="noopener noreferrer">
+            All work, including openJiuwen, Terminal Bench and knowledge graphs &rarr;
+          </a>
         </p>
       </Reveal>
     </section>

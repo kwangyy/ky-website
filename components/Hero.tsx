@@ -35,7 +35,13 @@ export default function Hero() {
         <Reveal>
           <p className="mb-6 font-mono text-label uppercase text-ink-3">About</p>
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-line">
-            <Image src="/kwang_yang_photo.jpg" alt="Kwang Yang Chia" fill className="object-cover" />
+            <Image
+              src="/kwang_yang_photo.jpg"
+              alt="Kwang Yang Chia"
+              fill
+              sizes="(min-width: 768px) 200px, 100vw"
+              className="object-cover"
+            />
           </div>
         </Reveal>
 
@@ -68,7 +74,7 @@ export default function Hero() {
               R&eacute;sum&eacute; (PDF)
             </a>
             <a
-              href="https://medium.com/@kwangyyinc"
+              href="https://kwangyy.substack.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-10 items-center rounded-full border border-line px-[18px] text-[13.5px] font-medium text-ink no-underline transition-colors hover:border-ink-3"

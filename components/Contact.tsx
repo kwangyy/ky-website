@@ -4,7 +4,7 @@ const socials = [
   { href: 'https://linkedin.com/in/kwang-yang-chia', label: 'LinkedIn' },
   { href: 'https://github.com/kwangyy', label: 'GitHub' },
   { href: 'https://twitter.com/kwangyyinc', label: 'Twitter' },
-  { href: 'https://medium.com/@kwangyyinc', label: 'Medium' },
+  { href: 'https://kwangyy.substack.com', label: 'Substack' },
 ]
 
 export default function Contact() {

@@ -1,6 +1,14 @@
 import Reveal from './Reveal'
 
-const entries = [
+type Entry = {
+  kind: string
+  title: string
+  detail: string
+  /** Omit when there is nothing to link to. The card still highlights on hover. */
+  href?: string
+}
+
+const entries: Entry[] = [
   {
     kind: 'Essay',
     title: 'Optimising RAG for web content at Atlas',
@@ -11,7 +19,12 @@ const entries = [
     kind: 'Workshops',
     title: '12 workshops, 200+ students',
     detail: 'Workshop Director, NUS Statistics & Data Science Society',
-    href: '#',
+  },
+  {
+    kind: 'Blog',
+    title: 'Blog, for more personal thoughts',
+    detail: 'Shorter and looser than the essays. Lives here, on this site.',
+    href: '/blog',
   },
   {
     kind: 'Teaching',
@@ -29,13 +42,14 @@ export default function Writing() {
         <span className="font-mono text-label uppercase text-ink-3">Interested in my thoughts?</span>
       </Reveal>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {entries.map((entry, i) => {
-          const external = entry.href.startsWith('http')
+          const external = entry.href?.startsWith('http')
+          const Tag = entry.href ? 'a' : 'div'
           return (
             <Reveal key={entry.title} delay={i * 0.07}>
-              <a
-                href={entry.href}
+              <Tag
+                {...(entry.href ? { href: entry.href } : {})}
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 className="flex h-full min-h-[180px] flex-col gap-3.5 rounded border border-line bg-surface p-[26px] text-ink no-underline transition-colors hover:border-ink-3"
               >
@@ -46,7 +60,7 @@ export default function Writing() {
                   {entry.title}
                 </span>
                 <span className="text-meta text-ink-2">{entry.detail}</span>
-              </a>
+              </Tag>
             </Reveal>
           )
         })}
