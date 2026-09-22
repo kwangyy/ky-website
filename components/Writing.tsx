@@ -22,8 +22,8 @@ const entries: Entry[] = [
   },
   {
     kind: 'Blog',
-    title: 'Blog, for more personal thoughts',
-    detail: 'Shorter and looser than the essays. Lives here, on this site.',
+    title: 'Blog',
+    detail: 'For more personal thoughts',
     href: '/blog',
   },
   {
