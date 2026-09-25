@@ -61,7 +61,7 @@
 /* Blog post body. Rendered from Markdown in app/blog/[slug]/page.tsx. */
 .prose > * + * { margin-top: 1.25em; }
 .prose { font-size: 1.125rem; line-height: 1.65; letter-spacing: -0.008em; }
-.prose h2 { margin-top: 2.2em; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; }
+.prose h2 { margin-top: 2.2em; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; scroll-margin-top: 96px; }
 .prose h3 { margin-top: 1.8em; font-size: 1.188rem; font-weight: 500; }
 .prose ul, .prose ol { padding-left: 1.4em; }
 .prose ul { list-style: disc; }
@@ -73,3 +73,7 @@
 .prose pre code { background: none; padding: 0; font-size: 0.85em; }
 .prose hr { border: 0; border-top: 1px solid var(--line); }
 .prose img { border-radius: 4px; }
+@media (max-width: 640px) {
+  .prose { font-size: 1rem; }
+  .prose h2 { font-size: 1.3rem; }
+}

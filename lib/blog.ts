@@ -39,3 +39,24 @@ export function getPost(slug: string): Post | undefined {
 export function formatDate(date: string): string {
   return new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 }
+
+export type Heading = { id: string; text: string }
+
+/** URL-safe id for a heading. Keeps non-ASCII letters (e.g. こだわり) and swaps spaces and ASCII punctuation for hyphens. */
+export function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[\s!-/:-@[-`{-~]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+/** The ## headings in a post, in order, for the contents list. */
+export function getHeadings(content: string): Heading[] {
+  return content
+    .split('\n')
+    .filter((line) => line.startsWith('## '))
+    .map((line) => {
+      const text = line.slice(3).trim()
+      return { id: slugify(text), text }
+    })
+}
