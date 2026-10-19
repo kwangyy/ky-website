@@ -1,5 +1,6 @@
 import './globals.css'
 import localFont from 'next/font/local'
+import SmoothScroll from '@/components/SmoothScroll'
 
 const geist = localFont({
   src: './fonts/GeistVF.woff',
@@ -41,7 +42,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="font-sans text-body">{children}</body>
+      <body className="font-sans text-body">
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   )
 }

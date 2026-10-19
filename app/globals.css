@@ -29,6 +29,9 @@
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
+  }
+  /* Native smooth scrolling fights Lenis, so it only applies when Lenis isn't running. */
+  html:not(.lenis) {
     scroll-behavior: smooth;
   }
   body {
